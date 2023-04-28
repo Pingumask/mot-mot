@@ -6,7 +6,7 @@ document.addEventListener('keypress', handleKey);
 
 function handleKey(event) {
 	let key = event.key;
-	if (key === ' ') {
+	if (key === 'Enter') {
 		return toggleTeam();
 	}
 	const token = document.querySelector(`[data-letter="${key}"]`);
@@ -14,7 +14,7 @@ function handleKey(event) {
 		return console.log(`Missing letter : ${key}`);
 	}
 	token.classList.toggle('flash');
-	if (token.dataset.height == 3 || token.dataset.height == -3) {
+	if (token.dataset.position == 3 || token.dataset.position == -3) {
 		return console.log(`Token ${key} already out`);
 	}
 	if (toggler.dataset.team === '⮟') {
@@ -24,15 +24,15 @@ function handleKey(event) {
 }
 
 function moveUp(token) {
-	let newHeight = Number(token.dataset.height) - 1;
-	token.dataset.height = newHeight;
-	token.style.transform = `translateY(${newHeight * 7}rem)`;
+	let newPos = Number(token.dataset.position) - 1;
+	token.dataset.position = newPos;
+	token.style.transform = `translateY(${newPos * 12}vh)`;
 }
 
 function moveDown(token) {
-	let newHeight = Number(token.dataset.height) + 1;
-	token.dataset.height = newHeight;
-	token.style.transform = `translateY(${newHeight * 7}rem)`;
+	let newPos = Number(token.dataset.position) + 1;
+	token.dataset.position = newPos;
+	token.style.transform = `translateY(${newPos * 12}vh)`;
 }
 
 function toggleTeam() {

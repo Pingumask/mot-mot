@@ -25,26 +25,18 @@ body {
 }
 
 main {
-    width: 90%;
-    height: 35rem;
+    width: 90vw;
+    height: 60vh;
     display: flex;
-    gap: 1.3rem;
+    gap: 1vmax;
     justify-content: center;
     align-items: center;
     background: linear-gradient(red 2%, yellow 2% 19%, red 20%, yellow 21% 39%, green 41% 59%, yellow 61% 79%, red, yellow 81% 98%, red 98%);
-    box-shadow: 0.5rem 0.5rem 1.5rem black;
-    padding: 2rem;
+    box-shadow: 1vmax 1vmax 3vmax black;
+    padding: 0 2rem;
     position: relative;
     z-index: 0;
 }
-
-/* article:first-child {
-    margin-left:2em;
-}
-
-article:last-child {
-    margin-right:2em;
-} */
 
 article {
     display: flex;
@@ -53,17 +45,29 @@ article {
     align-items: center;
     outline: 3px solid black;
     border-radius: 100vmax;
-    font-size: 1.5em;
-    width: 5rem;
-    height: 5rem;
+    font-size: 1.3vmax;
+    width: 4.2vmax;
+    height: 4.2vmax;
     background-color: limegreen;
-    color: white;
     transition: transform 1s;
     padding: 0;
     font-weight: bold;
-    box-shadow: 0.2rem 0.2rem 0.5rem black;
+    box-shadow: 0.4vmax 0.4vmax 1vmax black;
     position: relative;
     animation: flashout 1s forwards;
+}
+
+/* Text of tokens based on data-letter*/
+article::after {
+    content: attr(data-letter);
+    text-transform: capitalize;
+    scale: 400%;
+    position: relative;
+    top: -0.1rem;
+    left: 0.1rem;
+    color: white;
+    text-shadow: -0.05vmax 0.05vmax 0 orange,
+        -0.1vmax 0.1vmax 0 red
 }
 
 article.flash {
@@ -82,22 +86,10 @@ article.flash {
     }
 }
 
-article::after {
-    content: attr(data-letter);
-    text-transform: capitalize;
-    scale: 400%;
-    position: relative;
-    top: -0.1rem;
-    left: 0.1rem;
-    text-shadow: -0.05rem 0.05rem 0 orange,
-        -0.1rem 0.1rem 0 red
-}
-
 #team-toggler {
     position: absolute;
-    top: 2rem;
+    top: 2vh;
     border-radius: 100vmax;
-    outline: 3px solid black;
     background: limegreen;
     font-size: 2rem;
     font-weight: bold;
@@ -107,13 +99,11 @@ article::after {
 
 #team-toggler::after {
     content: attr(data-team);
+    color: white;
+    text-shadow: -0.15vmax 0.15vmax 0 orange,
+        -.3vmax 0.3vmax 0 red
 }
 
 #team-toggler[data-team="⮟"] {
-    top: calc(100vh - 5rem);
-}
-
-div {
-    position: absolute;
-    top: 1.5rem;
+    top: calc(100vh - 2vh - 3rem);
 }
