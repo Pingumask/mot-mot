@@ -2,7 +2,7 @@ const toggler = document.getElementById('team-toggler');
 
 toggler.addEventListener('click', toggleTeam);
 
-document.addEventListener('keydown', handleKey);
+document.addEventListener('keypress', handleKey);
 
 function handleKey(event) {
 	let key = event.key;
@@ -17,7 +17,7 @@ function handleKey(event) {
 	if (token.dataset.height == 3 || token.dataset.height == -3) {
 		return console.log(`Token ${key} already out`);
 	}
-	if (toggler.dataset.team === 'bot') {
+	if (toggler.dataset.team === '⮟') {
 		return moveDown(token);
 	}
 	moveUp(token);
@@ -36,5 +36,5 @@ function moveDown(token) {
 }
 
 function toggleTeam() {
-	toggler.dataset.team = toggler.dataset.team === 'bot' ? 'top' : 'bot';
+	toggler.dataset.team = toggler.dataset.team === '⮟' ? '⮝' : '⮟';
 }

@@ -109,7 +109,7 @@ article::after {
     content: attr(data-team);
 }
 
-#team-toggler[data-team="bot"] {
+#team-toggler[data-team="⮟"] {
     top: calc(100vh - 5rem);
 }
 
