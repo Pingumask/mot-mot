@@ -141,6 +141,7 @@ article:hover button:last-child {
     font-size: 2rem;
     font-weight: bold;
     padding: 0.2rem 1.5rem;
+    transition: 1s;
 }
 
 #team-toggler::after {
