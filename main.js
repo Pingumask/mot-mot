@@ -43,13 +43,13 @@ function moveToken(token) {
 function moveUp(token) {
 	let newPos = Number(token.dataset.position) - 1;
 	token.dataset.position = newPos;
-	token.style.transform = `translateY(${newPos * 12}vh)`;
+	token.style.transform = `translateY(${newPos * 12}vmin)`;
 }
 
 function moveDown(token) {
 	let newPos = Number(token.dataset.position) + 1;
 	token.dataset.position = newPos;
-	token.style.transform = `translateY(${newPos * 12}vh)`;
+	token.style.transform = `translateY(${newPos * 12}vmin)`;
 }
 
 function toggleTeam() {

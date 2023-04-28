@@ -3,7 +3,6 @@
 }
 
 :root {
-    background-color: gray;
     font-family: 'arial black', Arial, Helvetica, sans-serif;
 }
 
@@ -11,13 +10,14 @@ html,
 body {
     padding: 0;
     margin: 0;
+    background: linear-gradient(15deg, darkgreen, gray, darkgreen);
 }
 
 body {
     width: 100vw;
-    width: 100dvw;
+    width: 100dvmax;
     height: 100vh;
-    height: 100dvh;
+    height: 100dvmin;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -25,15 +25,15 @@ body {
 }
 
 main {
-    width: 90vw;
-    height: 60vh;
+    width: 85vmax;
+    height: 60vmin;
     display: flex;
-    gap: 1vmax;
+    gap: 0.9vmax;
     justify-content: center;
     align-items: center;
     background: linear-gradient(red 2%, yellow 2% 19%, red 20%, yellow 21% 39%, green 41% 59%, yellow 61% 79%, red, yellow 81% 98%, red 98%);
     box-shadow: 1vmax 1vmax 3vmax black;
-    padding: 0 2rem;
+    padding: 2vmax;
     position: relative;
     z-index: 0;
 }
@@ -88,7 +88,7 @@ article.flash {
 
 #team-toggler {
     position: absolute;
-    top: 2vh;
+    top: 2vmin;
     border-radius: 100vmax;
     background: limegreen;
     font-size: 2rem;
@@ -105,5 +105,15 @@ article.flash {
 }
 
 #team-toggler[data-team="⮟"] {
-    top: calc(100vh - 2vh - 3rem);
+    top: calc(100vmin - 2vmin - 3rem);
+}
+
+@media (orientation: portrait) {
+    html {
+        rotate: 90deg;
+    }
+
+    article::after {
+        rotate: -90deg;
+    }
 }
