@@ -4,6 +4,19 @@ toggler.addEventListener('click', toggleTeam);
 
 document.addEventListener('keypress', handleKey);
 
+const tokens = document.querySelectorAll('[data-letter]');
+
+console.log(tokens.length);
+console.log(tokens);
+for (const token of tokens) {
+	console.log(token);
+	token.addEventListener('click', handleTouch);
+}
+
+function handleTouch(event) {
+	moveToken(event.target);
+}
+
 function handleKey(event) {
 	let key = event.key;
 	if (key === 'Enter') {
@@ -13,6 +26,10 @@ function handleKey(event) {
 	if (token === null) {
 		return console.log(`Missing letter : ${key}`);
 	}
+	moveToken(token);
+}
+
+function moveToken(token) {
 	token.classList.toggle('flash');
 	if (token.dataset.position == 3 || token.dataset.position == -3) {
 		return console.log(`Token ${key} already out`);
