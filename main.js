@@ -32,7 +32,7 @@ function handleKey(event) {
 function moveToken(token) {
 	token.classList.toggle('flash');
 	if (token.dataset.position == 3 || token.dataset.position == -3) {
-		return console.log(`Token ${key} already out`);
+		return; // letter already out
 	}
 	if (toggler.dataset.team === '⮟') {
 		return moveDown(token);
