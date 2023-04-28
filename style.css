@@ -93,45 +93,6 @@ article::after {
         -0.1rem 0.1rem 0 red
 }
 
-article button {
-    color: transparent;
-    border: none;
-    cursor: pointer;
-    width: 100%;
-    transition: 500ms;
-    margin: 0;
-    padding: 0.5em;
-    font-weight: bold;
-    background-color: transparent;
-    background-repeat: no-repeat;
-    z-index: 1;
-}
-
-article:hover button {
-    color: white;
-    text-shadow: 1px 1px 1px black;
-}
-
-button:first-child {
-    background: linear-gradient(black 20%, transparent 50%);
-    background-position: bottom;
-    background-size: 200% 200%;
-}
-
-button:last-child {
-    background: linear-gradient(transparent 50%, black 80%);
-    background-position: top;
-    background-size: 200% 200%;
-}
-
-article:hover button:first-child {
-    background-position: top;
-}
-
-article:hover button:last-child {
-    background-position: bottom;
-}
-
 #team-toggler {
     position: absolute;
     top: 2rem;
@@ -150,4 +111,9 @@ article:hover button:last-child {
 
 #team-toggler[data-team="bot"] {
     top: calc(100vh - 5rem);
+}
+
+div {
+    position: absolute;
+    top: 1.5rem;
 }
