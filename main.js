@@ -6,10 +6,7 @@ document.addEventListener('keypress', handleKey);
 
 const tokens = document.querySelectorAll('[data-letter]');
 
-console.log(tokens.length);
-console.log(tokens);
 for (const token of tokens) {
-	console.log(token);
 	token.addEventListener('click', handleTouch);
 }
 
@@ -24,7 +21,7 @@ function handleKey(event) {
 	}
 	const token = document.querySelector(`[data-letter="${key}"]`);
 	if (token === null) {
-		return console.log(`Missing letter : ${key}`);
+		return; // not in game letter
 	}
 	moveToken(token);
 }
